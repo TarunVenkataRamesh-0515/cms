@@ -105,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                 <div class="form-group">
-                <label>Subject</label>
+                <label>Subject1</label>
                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="subject"><option >Select Subject</option>
                   <?php
                   $sql = "SELECT * FROM subject";
@@ -119,10 +119,99 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   ?>
                 </select>
                 </div>
-
                 <div class="form-group">
-                <label>Teacher</label>
+                <label>Teacher1</label>
                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="teacher"><option >Select Teacher</option>
+                  <?php
+                  $sql = "SELECT * FROM teacher";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                   // output data of each row
+                     while($row = $result->fetch_assoc()) {
+                  echo "<option value='".$row["tid"]."' >".$row["fname"]." ".$row["lname"]."_ID:".$row["tid"]."</option>";
+                       }
+                        }
+                  ?>
+                </select>
+                </div>
+                <div class="form-group">
+                <label>Subject2</label>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="subject2"><option >Select Subject</option>
+                  <?php
+                  $sql = "SELECT * FROM subject";
+                  $result2 = $conn->query($sql);
+                  if ($result2->num_rows > 0) {
+                   // output data of each row
+                     while($row = $result2->fetch_assoc()) {
+                  echo "<option value='".$row["sid"]."' >".$row["title"]."_ID:".$row["sid"]."</option>";
+                       }
+                        }
+                  ?>
+                </select>
+                </div>
+                <div class="form-group">
+                <label>Teacher2</label>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="teacher2"><option >Select Teacher</option>
+                  <?php
+                  $sql = "SELECT * FROM teacher";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                   // output data of each row
+                     while($row = $result->fetch_assoc()) {
+                  echo "<option value='".$row["tid"]."' >".$row["fname"]." ".$row["lname"]."_ID:".$row["tid"]."</option>";
+                       }
+                        }
+                  ?>
+                </select>
+                </div>
+                <div class="form-group">
+                <label>Subject3</label>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="subject3"><option >Select Subject</option>
+                  <?php
+                  $sql = "SELECT * FROM subject";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                   // output data of each row
+                     while($row = $result->fetch_assoc()) {
+                  echo "<option value='".$row["sid"]."' >".$row["title"]."_ID:".$row["sid"]."</option>";
+                       }
+                        }
+                  ?>
+                </select>
+                </div>
+                <div class="form-group">
+                <label>Teacher3</label>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="teacher3"><option >Select Teacher</option>
+                  <?php
+                  $sql = "SELECT * FROM teacher";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                   // output data of each row
+                     while($row = $result->fetch_assoc()) {
+                  echo "<option value='".$row["tid"]."' >".$row["fname"]." ".$row["lname"]."_ID:".$row["tid"]."</option>";
+                       }
+                        }
+                  ?>
+                </select>
+                </div>
+                <div class="form-group">
+                <label>Subject4</label>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="subject4"><option >Select Subject</option>
+                  <?php
+                  $sql = "SELECT * FROM subject";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                   // output data of each row
+                     while($row = $result->fetch_assoc()) {
+                  echo "<option value='".$row["sid"]."' >".$row["title"]."_ID:".$row["sid"]."</option>";
+                       }
+                        }
+                  ?>
+                </select>
+                </div>
+                <div class="form-group">
+                <label>Teacher4</label>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="teacher4"><option >Select Teacher</option>
                   <?php
                   $sql = "SELECT * FROM teacher";
                   $result = $conn->query($sql);
@@ -156,13 +245,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                 <label>Day</label>
                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="day"><option >Select Day</option>
-                 <option value="Monday" >Monday</option>
-                 <option value="Tuesday" >Tuesday</option>
-                 <option value="Wendsday" >Wendsday</option>
-                 <option value="Thursday" >Thursday</option>
-                 <option value="Friday" >Friday</option>
-                 <option value="Saturday" >Saturday</option>
-                 <option value="Sunday" >Sunday</option>
+                 <option value="1.Monday" >1. Monday</option>
+                 <option value="2.Tuesday" >2. Tuesday</option>
+                 <option value="3.Wednesday" >3. Wednesday</option>
+                 <option value="4.Thursday" >4. Thursday</option>
+                 <option value="5.Friday" >6. Friday</option>
+                 <option value="6.Saturday" >7. Saturday</option>
+                 <option value="7.Sunday" >8. Sunday</option>
                 </select>
                 </div>
 
@@ -223,7 +312,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               if (isset($_POST['submit'])) {
                 $subject = $_POST['subject'];
+                $subject2 = $_POST['subject2'];
+                $subject3 = $_POST['subject3'];
+                $subject4 = $_POST['subject4'];
                 $teacher = $_POST['teacher'];
+                $teacher2 = $_POST['teacher2'];
+                $teacher3 = $_POST['teacher3'];
+                $teacher4 = $_POST['teacher4'];
                 $classroom = $_POST['classroom'];
 
                // $dob = date_format(new DateTime($_POST['dob']),'Y-m-d');
@@ -242,7 +337,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                    
 
-                    $sql = "INSERT INTO schedule (subject,teacher,class,day,stime,etime) VALUES ('".$subject."', '".$teacher."', '".$classroom."','".$day."','".$stime."','".$etime."')";
+                    $sql = "INSERT INTO schedule (subject,subject2,subject3,subject4,teacher,teacher2,teacher3,teacher4,class,day,stime,etime) VALUES ('".$subject."','".$subject2."','".$subject3."','".$subject4."', '".$teacher."','".$teacher2."','".$teacher3."','".$teacher4."', '".$classroom."','".$day."','".$stime."','".$etime."')";
 
                   if ($conn->query($sql) === TRUE) {
                          echo "<script type='text/javascript'> var x = document.getElementById('truemsg');
@@ -277,36 +372,40 @@ x.style.display='block';</script>";
             </div>
             
             <!-- /.box-header -->
+            
             <div class="box-body">
+              
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Schedule ID</th>
-                  <th>Subject</th>
-                  <th>Teacher</th>
-                  <th>Classroom</th>
-                  <th>Day</th>
-                  <th>Start Time</th>
-                  <th>End Time</th>
+                  <th>Day/Peroid</th>
+                  <th>I<br>10:00-11:00</th>
+                  <th>II<br>11:00-12:00</th>
+                  <th>LUNCH<br>12:00-13:00</th>
+                  <th>III<br>13:00-14:00</th>
+                  <th>IV<br>14:00-15:00</th>
                   
                 </tr>
                
                 </thead>
                 <tbody>
 
-
                   <?php
 
                   $sql = "SELECT * FROM schedule";
                   $result = $conn->query($sql);
-
+                  $lunch="LUNCH       ";
+                  $i=0;
+                  
                   if ($result->num_rows > 0) {
                    // output data of each row
                      while($row = $result->fetch_assoc()) {
-                      echo  "<tr><td> " . $row["id"]. " </td><td> " . $row["subject"]." </td><td> " . $row["teacher"]." </td><td> " . $row["class"]. "</td><td>" . $row["day"]. "</td><td>" . $row["stime"]. "</td><td>" . $row["etime"]. "</td></tr>";
-                       }
-                                  }
-
+                      $char = $lunch[$i];
+                      echo  "<tr><td> " . $row["day"]. " </td><td> " . $row["subject"]."<br>".$row["teacher"]."</br></td><td> " . $row["subject2"]."<br>".$row["teacher2"]."</br></td><td><b>".$char."</b></td><td> " . $row["subject3"]."<br>".$row["teacher3"]."</br></td><td>" . $row["subject4"]."<br>".$row["teacher4"]."</br></td></tr>";
+                      $i=$i+1;  
+                    }
+                    }
+                                  
                   ?>
 
 

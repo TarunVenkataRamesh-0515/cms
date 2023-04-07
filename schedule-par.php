@@ -2,7 +2,7 @@
 
 
 include_once 'database.php';
-if (!isset($_SESSION['user'])||$_SESSION['role']!='Student') {
+if (!isset($_SESSION['user'])||$_SESSION['role']!='Parent') {
   # code...
   header('Location:./logout.php');
 }
@@ -118,8 +118,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                    $row2 = ($conn->query("select fname,lname from teacher where tid ='".$row["teacher"]."'"))->fetch_assoc();
                    $row3 = ($conn->query("select title from subject where sid ='".$row["subject"]."'"))->fetch_assoc();
                    $char = $lunch[$i];
-                   echo  "<tr><td> " . $row["day"]. " </td><td> " . $row["subject"]."<br>".$row["teacher"]."</br></td><td> " . $row["subject2"]."<br>".$row["teacher2"]."</br></td><td><b>".$char."</b></td><td> " . $row["subject3"]."<br>".$row["teacher3"]."</br></td><td>" . $row["subject4"]."<br>".$row["teacher4"]."</br></td></tr>";
-                    $i=$i+1;  
+                   echo  "<tr><td> " . $row["day"]. " </td><td> " . $row["subject"]." </td><td> " . $row["subject2"]." </td><td><b>".$char."</b></td><td> " . $row["subject3"]. "</td><td>" . $row["subject4"]. "</td></tr>";
+                   $i=$i+1;  
                     }
                   }            
 
