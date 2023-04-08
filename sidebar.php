@@ -39,7 +39,7 @@
       <li id="notice-role"><a href="./notice-role.php"><i class="fa fa-envelope-o"></i> <span>Notice</span> </a></li>
       <li id="exam"><a href="./exam-stu-par.php"><i class="fa fa-line-chart"></i> <span>Exam</span> </a></li>
       <li id="examresults-par"><a href="./examresults-par.php"><i class="fa fa-graduation-cap"></i> <span>Exam Results</span> </a></li>
-      <li id="schedule-stu"><a href="./schedule-par.php"><i class="fa fa-calendar-o"></i> <span>Schedule</span> </a></li>
+      <!-- <li id="schedule-stu"><a href="./schedule-par.php"><i class="fa fa-calendar-o"></i> <span>Schedule</span> </a></li> -->
       <li id="attendance-par"><a href="./attendancereport-par.php"><i class="fa  fa-check"></i> <span>Attendance</span> </a></li>
       <li id="message"><a href="./message.php"><i class="fa fa-envelope"></i> <span>Message</span> </a></li>
           <?php
